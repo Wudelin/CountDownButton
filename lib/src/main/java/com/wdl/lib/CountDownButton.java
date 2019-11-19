@@ -149,7 +149,14 @@ public class CountDownButton extends AppCompatButton
          */
         public void onTick(long millisUntilFinished, @NonNull Button button)
         {
-            button.setText(String.format("%ss", String.valueOf((millisUntilFinished / 1000))));
+            try
+            {
+                button.setText(String.format("%ss", String.valueOf((millisUntilFinished / 1000))));
+            } catch (Exception e)
+            {
+                e.printStackTrace();
+            }
+
         }
 
         /**
